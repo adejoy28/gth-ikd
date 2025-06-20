@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('serial_number')->unique();
-            $table->enum('status', ['available', 'assigned', 'damaged'])->default('available');
+            $table->enum('status', ['available', 'assigned', 'maintained'])->default('available');
             $table->timestamps();
         });
     }

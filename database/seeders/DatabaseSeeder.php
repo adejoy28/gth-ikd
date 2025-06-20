@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\LaptopSeeder;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -25,14 +26,17 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
             'role' => 'admin',
         ]);
-    User::factory()->create([
-        'firstname' => 'john',
-        'lastname' => 'doe',
-        'phone' => '0123456789',
-        'username' => 'john',
-        'email' => 'john@example.com',
-        'password' => Hash::make('password'),
-        'role' => 'user',
-    ]);
+        User::factory()->create([
+            'firstname' => 'john',
+            'lastname' => 'doe',
+            'phone' => '0123456789',
+            'username' => 'john',
+            'email' => 'john@example.com',
+            'password' => Hash::make('password'),
+            'role' => 'student',
+        ]);
+
+        $laptopSeeder = new LaptopSeeder();
+        $laptopSeeder->run();
     }
 }

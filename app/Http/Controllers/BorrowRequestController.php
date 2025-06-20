@@ -84,3 +84,4 @@ class BorrowRequestController extends Controller
         return back()->with('success', 'Laptop marked as returned.');
     }
 }
+// LaptopController.php
